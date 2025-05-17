@@ -5,7 +5,7 @@ import Menubar from './Components/Menubar';
 function App() {
     return (
         <div>
-            <img src="./home.jpg" width="100%"/>
+            <img src={'${basename}/home.jpg'} width="100%"/>
             <Menubar/>
             <Footer/>
         </div>

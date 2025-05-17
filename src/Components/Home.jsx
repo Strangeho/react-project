@@ -7,23 +7,22 @@ const Home = () => {
     const [query, setQuery] = useState('리액트');
     const [page, setPage] = useState(1);
     const [last, setLast] = useState(1);
-    const callAPI = async() => {
+    const callAPI = async () => {
         const url = "https://dapi.kakao.com/v3/search/book?target=title";
         const config = {
-            headers: {
-                Authorization: "Kakao AK 58ee552b8901210a6035c27d68e63f05"
-            },
-            params: {
-                query: "리액트",
-                size: 12,
-                page: page
-            }
-        }
+          headers: {
+            Authorization: "KakaoAK " + process.env.REACT_APP_KAKAO_REST_KEY,
+          },
+          params: {
+            query: query,
+            page: page,
+            size: 12,
+          },
+        };
         const res = await axios.get(url, config);
-        console.log(res);
         setDocuments(res.data.documents);
-        setLast(Math.ceil(res.data.meta.pageable_count/12));
-    }
+        setLast(Math.ceil(res.data.meta.pageable_count / 12));
+      };
 
     useEffect(() => {
         callAPI();
