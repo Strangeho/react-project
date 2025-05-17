@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
-import LoginPage from './LoginPage'
+import LoginPage from './User/LoginPage'
 import Cart from './Cart'
 
 const MainRouter = () => {

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Button, Card, Col, Form, InputGroup, Row } from 'react-bootstrap';
+import BookPage from './BookPage';
 
 const Home = () => {
     const [documents, setDocuments] = useState([]);
@@ -55,7 +56,7 @@ const Home = () => {
                     <Col lg={2} md={3} sm={6} className="mb-2">
                         <Card>
                             <Card.Body>
-                                <img src={doc.thumbnail} width="100%" />
+                                <BookPage book={doc}/>
                             </Card.Body>
                             <Card.Footer>
                                 <div className="text-truncate">{doc.title}</div>
