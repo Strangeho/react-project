@@ -1,20 +1,27 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Route, Routes } from 'react-router-dom'
-import Home from './Home'
-import LoginPage from './User/LoginPage'
-import Cart from './Cart'
+import HomePage from './HomePage'
+import CartPage from './CartPage'
+import LoginPage from './user/LoginPage'
+import JoinPage from './user/JoinPage'
+
 
 const MainRouter = () => {
-    return (
-        <Container>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/Cart" element={<Cart/>}/>
-                <Route path="/Login" element={<LoginPage/>}/>
-            </Routes>
-        </Container>
-    )
+  return (
+    <Container>
+      <Routes>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/cart' element={<CartPage />} />
+          <Route path='/login' element={<LoginPage/>}/>
+          <Route path='/join' element={<JoinPage />} />
+ 
+      </Routes>
+    </Container>
+  )
 }
 
 export default MainRouter
+
+
+
